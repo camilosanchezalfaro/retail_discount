@@ -1,15 +1,17 @@
 from flask import Flask, jsonify
-from scraper import get_discounts
 
 app = Flask(__name__)
 
-@app.route('/api/discounts/<int:discount_percentage>', methods=['GET'])
-def discounts(discount_percentage):
-    try:
-        data = get_discounts(discount_percentage)
-        return jsonify(data)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+@app.route('/api/index', methods=['GET'])
+def index():
+    return jsonify({
+        "message": "API funcionando",
+        "descuentos": [
+            {"nombre": "Producto 1", "descuento": 30, "link": "https://www.ejemplo.com/producto1"},
+            {"nombre": "Producto 2", "descuento": 50, "link": "https://www.ejemplo.com/producto2"}
+        ]
+    })
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
+
