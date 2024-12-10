@@ -1,78 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Descuentos Unificados</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #007BFF;
-      color: white;
-      padding: 20px;
-    }
-    .button {
-      display: inline-block;
-      margin: 10px;
-      padding: 15px 25px;
-      font-size: 18px;
-      color: white;
-      background-color: #28a745;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .button:hover {
-      background-color: #218838;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descuentos Unificados</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Descuentos Unificados</h1>
-    <p>Encuentra los mejores descuentos en un solo lugar</p>
-  </header>
-  <main>
-    <h2>Selecciona un porcentaje de descuento:</h2>
-    <div>
-      <a href="#" class="button" onclick="goToDiscount(30)">30%</a>
-      <a href="#" class="button" onclick="goToDiscount(50)">50%</a>
-      <a href="#" class="button" onclick="goToDiscount(70)">70%</a>
-    </div>
-  </main>
-  <script>
-    function goToDiscount(percent) {
-      const urls = {
-        "30": [
-          "https://empresa1.com/descuentos-30",
-          "https://empresa2.com/descuentos-30",
-          "https://empresa3.com/descuentos-30"
-        ],
-        "50": [
-          "https://empresa1.com/descuentos-50",
-          "https://empresa2.com/descuentos-50",
-          "https://empresa3.com/descuentos-50"
-        ],
-        "70": [
-          "https://empresa1.com/descuentos-70",
-          "https://empresa2.com/descuentos-70",
-          "https://empresa3.com/descuentos-70"
-        ]
-      };
-
-      const selectedUrls = urls[percent];
-      if (selectedUrls) {
-        alert(`Aquí tienes los descuentos del ${percent}%: \n${selectedUrls.join('\n')}`);
-      } else {
-        alert("No hay descuentos disponibles para este porcentaje.");
-      }
-    }
-  </script>
+    <header>
+        <h1>Descuentos Unificados</h1>
+        <p>Encuentra los mejores descuentos en Falabella, Paris y Ripley</p>
+    </header>
+    <main>
+        <button id="fetch-discounts">Ver Descuentos</button>
+        <div id="results"></div>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
